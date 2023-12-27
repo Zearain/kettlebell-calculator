@@ -74,7 +74,7 @@ static bool RunCalculator(KettlebellCalculatorService calculator)
     if (results.Count == 1 && results[0].TotalWeight == weight)
     {
         var result = results[0];
-        Console.WriteLine($"Exact combination for {result.TotalWeight} kg found:.");
+        Console.WriteLine($"Exact combination for {result.TotalWeight} kg found:");
         PrintPlates(result.PlateCombination.Plates);
 
         return true;
