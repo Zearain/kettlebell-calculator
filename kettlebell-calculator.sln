@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E793FB42
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kettlebell.Calc.Core.Tests", "tests\Core.Tests\Kettlebell.Calc.Core.Tests.csproj", "{5B4E01AB-3631-42C2-944F-EE97C5AEEFA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kettlebell.Calc.Console", "src\Console\Kettlebell.Calc.Console.csproj", "{261B0760-E437-4E1A-8A4A-D3959843BB4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,10 +36,15 @@ Global
 		{5B4E01AB-3631-42C2-944F-EE97C5AEEFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B4E01AB-3631-42C2-944F-EE97C5AEEFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B4E01AB-3631-42C2-944F-EE97C5AEEFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{261B0760-E437-4E1A-8A4A-D3959843BB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261B0760-E437-4E1A-8A4A-D3959843BB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261B0760-E437-4E1A-8A4A-D3959843BB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261B0760-E437-4E1A-8A4A-D3959843BB4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1503E9D0-00EB-47E0-9CBC-6DDC0299E990} = {8E69BFB3-076A-4410-858C-BFE5AE0AC3CF}
 		{BC70B3B2-4F2D-404A-A916-645DCDEAF21F} = {8E69BFB3-076A-4410-858C-BFE5AE0AC3CF}
 		{5B4E01AB-3631-42C2-944F-EE97C5AEEFA8} = {E793FB42-3855-4CB0-8CC2-FE0A012E6925}
+		{261B0760-E437-4E1A-8A4A-D3959843BB4C} = {8E69BFB3-076A-4410-858C-BFE5AE0AC3CF}
 	EndGlobalSection
 EndGlobal
