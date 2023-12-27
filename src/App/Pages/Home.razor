@@ -1,7 +1,63 @@
 ﻿@page "/"
 
+@inject KettlebellCalculatorService KettlebellCalculatorService
+
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<MudText Typo="Typo.h1">Kettlebell Calculator</MudText>
+<MudPaper>
+<MudNumericField T="float?" @bind-Value="DesiredWeight" Label="Desired Weight" Adornment="Adornment.End" AdornmentText="kg" />
 
-Welcome to your new app.
+<MudButton OnClick="Calculate" Variant="Variant.Filled">Calculate</MudButton>
+</MudPaper>
+
+<br />
+
+<MudGrid>
+@if (Results == null || !Results.Any())
+{
+    <MudItem xs="12" sm="6" md="4" lg="3">
+        <MudCard>
+            <MudCardHeader>
+                <MudText Typo="Typo.h6">No Results</MudText>
+            </MudCardHeader>
+            <MudCardContent>
+                @foreach (var plate in Plates)
+                {
+                    <MudChip Color="Color.Info">@(plate.Index)  [@(plate.Weight) kg]</MudChip>
+                }
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+}
+else
+{
+        @foreach (var result in Results)
+        {
+            <MudItem xs="12" sm="6" md="4" lg="3">
+                <KettlebellResultRender BaseWeight="@result.BaseWeight" Plates="@Plates" Result="@result" />
+            </MudItem>
+        }
+}
+</MudGrid>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Plates = KettlebellCalculatorService.Plates.OrderBy(p => p.Index).ToArray();
+    }
+
+    private Plate[] Plates { get; set; } = null!;
+
+    private IEnumerable<KettlebellResult>? Results { get; set; } = null;
+
+    private float? DesiredWeight { get; set; }
+
+    private void Calculate()
+    {
+        if (!DesiredWeight.HasValue)
+            return;
+
+        Results = KettlebellCalculatorService.GetCombinationsForWeight(DesiredWeight.Value);
+    }
+}

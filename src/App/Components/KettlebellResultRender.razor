@@ -1,0 +1,23 @@
+<MudCard>
+    <MudCardHeader>
+        <MudText Typo="Typo.h6">Weight: @(Result.TotalWeight.ToString("n1")) kg</MudText>
+    </MudCardHeader>
+    <MudCardContent>
+        @foreach (var plate in Plates)
+        {
+            var isIncluded = Result.PlateCombination.Plates.Contains(plate);
+            <MudChip Color="isIncluded ? Color.Success : Color.Error">@(plate.Index)  [@(plate.Weight) kg]</MudChip>
+        }
+    </MudCardContent>
+</MudCard>
+
+@code {
+    [Parameter, EditorRequired]
+    public float BaseWeight { get; set; } = 0.0f;
+
+    [Parameter, EditorRequired]
+    public IEnumerable<Plate> Plates { get; set; } = null!;
+
+    [Parameter, EditorRequired]
+    public KettlebellResult Result { get; set; } = null!;
+}

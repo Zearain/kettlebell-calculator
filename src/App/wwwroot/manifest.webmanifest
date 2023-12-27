@@ -1,6 +1,6 @@
 {
-  "name": "Kettlebell.Calc.App",
-  "short_name": "Kettlebell.Calc.App",
+  "name": "Kettlebell Calculator",
+  "short_name": "Kettlebell Calc",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
