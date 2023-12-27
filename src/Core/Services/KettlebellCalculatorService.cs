@@ -58,7 +58,7 @@ public sealed class KettlebellCalculatorService
     /// </summary>
     /// <param name="weight">The weight.</param>
     /// <returns>The combinations.</returns>
-    public IReadOnlyList<KettlebellResult> GetCombinationsForWeight(double weight)
+    public IReadOnlyList<KettlebellResult> GetCombinationsForWeight(float weight)
     {
         var exactMatch = this.combinations.FirstOrDefault(c => c.TotalWeight + this.options.BaseWeight == weight);
         if (exactMatch is not null)

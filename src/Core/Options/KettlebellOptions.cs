@@ -17,18 +17,18 @@ public sealed class KettlebellOptions
     /// <summary>
     /// Gets the base weight of the kettlebell.
     /// </summary>
-    public double BaseWeight { get; init; } = 3.4;
+    public float BaseWeight { get; init; } = 3.4f;
 
     /// <summary>
     /// Gets the weight of the plates.
     /// </summary>
-    public double[] Plates { get; init; } = new[]
+    public float[] Plates { get; init; } = new[]
     {
-        2.1,
-        2.5,
-        2.7,
-        2.7,
-        2.5,
-        2.1,
+        2.1f,
+        2.5f,
+        2.7f,
+        2.7f,
+        2.5f,
+        2.1f,
     };
 }

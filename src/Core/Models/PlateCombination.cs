@@ -13,5 +13,5 @@ public sealed record PlateCombination(IEnumerable<Plate> Plates)
     /// <summary>
     /// Gets the total weight of the plates.
     /// </summary>
-    public double TotalWeight => this.Plates.Sum(p => p.Weight);
+    public float TotalWeight => this.Plates.Sum(p => p.Weight);
 }

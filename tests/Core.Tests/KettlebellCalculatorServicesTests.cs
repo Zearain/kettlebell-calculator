@@ -27,7 +27,7 @@ public class KettlebellCalculatorServiceTests
         this.mockOptions = new Mock<IOptions<KettlebellOptions>>();
         this.mockOptions.Setup(o => o.Value).Returns(new KettlebellOptions
         {
-            Plates = new[] { 1.0, 2.0, 3.0 },
+            Plates = new[] { 1.0f, 2.0f, 3.0f },
         });
     }
 
@@ -45,16 +45,16 @@ public class KettlebellCalculatorServiceTests
         var service = new KettlebellCalculatorService(this.mockLogger.Object, this.mockOptions.Object);
 
         // Check if all combinations are generated
-        var expectedCombinations = new List<List<double>>
+        var expectedCombinations = new List<List<float>>
         {
-            new List<double> { 1.0, 2.0, 3.0 },
-            new List<double> { 1.0, 2.0 },
-            new List<double> { 1.0, 3.0 },
-            new List<double> { 2.0, 3.0 },
-            new List<double> { 1.0 },
-            new List<double> { 2.0 },
-            new List<double> { 3.0 },
-            new List<double> { },
+            new List<float> { 1.0f, 2.0f, 3.0f },
+            new List<float> { 1.0f, 2.0f },
+            new List<float> { 1.0f, 3.0f },
+            new List<float> { 2.0f, 3.0f },
+            new List<float> { 1.0f },
+            new List<float> { 2.0f },
+            new List<float> { 3.0f },
+            new List<float> { },
         };
 
         var actualCombinations = service.PlateCombinations

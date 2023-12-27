@@ -9,10 +9,10 @@ namespace Kettlebell.Calc.Core.Models;
 /// </summary>
 /// <param name="BaseWeight">The base weight of the kettlebell.</param>
 /// <param name="PlateCombination">The plate combination.</param>
-public sealed record KettlebellResult(double BaseWeight, PlateCombination PlateCombination)
+public sealed record KettlebellResult(float BaseWeight, PlateCombination PlateCombination)
 {
     /// <summary>
     /// Gets the total weight of the kettlebell.
     /// </summary>
-    public double TotalWeight => this.BaseWeight + this.PlateCombination.TotalWeight;
+    public float TotalWeight => this.BaseWeight + this.PlateCombination.TotalWeight;
 }

@@ -9,4 +9,4 @@ namespace Kettlebell.Calc.Core.Models;
 /// </summary>
 /// <param name="Index">The index.</param>
 /// <param name="Weight">The weight.</param>
-public sealed record Plate(int Index, double Weight);
+public sealed record Plate(int Index, float Weight);

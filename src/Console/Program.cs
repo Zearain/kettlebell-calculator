@@ -58,7 +58,7 @@ static bool RunCalculator(KettlebellCalculatorService calculator)
         return true;
     }
 
-    if (!double.TryParse(input, out var weight))
+    if (!float.TryParse(input, out var weight))
     {
         Console.WriteLine("Invalid input.");
         return true;
