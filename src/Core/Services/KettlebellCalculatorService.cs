@@ -45,6 +45,15 @@ public sealed class KettlebellCalculatorService
     public IReadOnlyList<PlateCombination> PlateCombinations => this.combinations.AsReadOnly();
 
     /// <summary>
+    /// Gets all possible weights and plate combinations for the kettlebell.
+    /// </summary>
+    /// <returns>The weights and plate combinations.</returns>
+    public IReadOnlyList<KettlebellResult> GetAllCombinations()
+    {
+        return this.combinations.Select(c => new KettlebellResult(this.options.BaseWeight, c)).ToList().AsReadOnly();
+    }
+
+    /// <summary>
     /// Gets the combinations for the given weight.
     /// </summary>
     /// <param name="weight">The weight.</param>

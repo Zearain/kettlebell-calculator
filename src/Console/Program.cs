@@ -34,9 +34,28 @@ static bool RunCalculator(KettlebellCalculatorService calculator)
     Console.Write("Enter the desired weight: ");
     var input = Console.ReadLine();
 
-    if (string.IsNullOrWhiteSpace(input))
+    if (string.IsNullOrWhiteSpace(input) || input.Equals("q", StringComparison.OrdinalIgnoreCase))
     {
         return false;
+    }
+
+    if (input.Equals("all", StringComparison.OrdinalIgnoreCase))
+    {
+        var allResults = calculator.GetAllCombinations().OrderBy(r => r.TotalWeight).ToList();
+        Console.WriteLine($"All possible combinations for kettlebell:");
+
+        for (var i = 0; i < allResults.Count; i++)
+        {
+            var result = allResults[i];
+            Console.WriteLine($"Result {i + 1}:");
+            Console.WriteLine($"Total weight: {result.TotalWeight} kg");
+            Console.WriteLine($"Plates:");
+            PrintPlates(result.PlateCombination.Plates);
+
+            Console.WriteLine("---");
+        }
+
+        return true;
     }
 
     if (!double.TryParse(input, out var weight))
