@@ -56,7 +56,10 @@ else
     private void Calculate()
     {
         if (!DesiredWeight.HasValue)
+        {
+            Results = null;
             return;
+        }
 
         Results = KettlebellCalculatorService.GetCombinationsForWeight(DesiredWeight.Value);
     }

@@ -22,13 +22,13 @@ public sealed class KettlebellOptions
     /// <summary>
     /// Gets the weight of the plates.
     /// </summary>
-    public float[] Plates { get; init; } = new[]
-    {
+    public float[] Plates { get; init; } =
+    [
         2.1f,
         2.5f,
         2.7f,
         2.7f,
         2.5f,
         2.1f,
-    };
+    ];
 }
